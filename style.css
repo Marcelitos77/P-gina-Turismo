@@ -22,6 +22,7 @@ nav .cabecalho a{
     font-weight: 600;
 }
 
+
 nav ul {
     display: flex;
     align-items: center;
@@ -50,15 +51,17 @@ nav li a:hover {
 }
 
 .corpo {
-    height: 100vh;
+    width: 100%;
+    height:88vh;
     background: url(./fundo.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: none;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.123);
+    background-attachment: fixed;
 }
 
 .texto {
@@ -97,9 +100,89 @@ button:hover {
     color: rgb(67, 156, 97);   
 }
 
+.onda {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background-image: url(./onda.png);
+    background-size: 1000px 100px;
+    animation: ondaMovimento 5s ease-in-out infinite alternate;
 
-footer {
-    color: rgb(32, 21, 48);
-    padding-top: 15%;
 }
 
+@keyframes ondaMovimento {
+    0%{
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(25px);
+    }
+}
+#onda1 {
+    z-index: 1000;
+    opacity: 1;
+    background-position-x: 400px;
+}
+
+#onda2 {
+    z-index: 9990;
+    opacity: 0.5;
+    background-position-x: 300px;
+}
+
+#onda3 {
+    z-index: 998;
+    opacity: 0.2;
+    background-position-x: 200px;
+}
+
+#onda4 {
+    z-index: 997;
+    opacity: 0.8;
+    background-position-x: 100px;
+}
+
+.conteudo {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: justify;
+}
+
+footer {
+    color: rgb(23, 29, 110);
+    margin-top: 5%;  
+    text-align: center; 
+    font-weight: bold;
+}
+
+@media screen and (max-width: 750px) {
+
+.corpo {
+    width: 100%;
+    height: 82vh;
+}
+
+nav {
+    text-align: center;
+    font-size: 20px;
+}
+
+.conteudo {
+    margin-top:50px;
+}
+
+.subtitulo {
+    display: none;
+}
+
+.menu {
+    display: none;
+}
+
+body {
+    text-align: justify;
+}
+
+}
